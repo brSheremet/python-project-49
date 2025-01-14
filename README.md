@@ -11,3 +11,6 @@ You can see the demo of the game here:
 
 
 [![Demo Video](https://asciinema.org/a/df3SFcBUUQm4ToDIaqjW9u3fc.svg)](https://asciinema.org/a/df3SFcBUUQm4ToDIaqjW9u3fc)
+
+Игра НОД:
+[![Demo Video](https://asciinema.org/a/VHEK66OjUPUm0Vt5Jh571jgfN.svg)](https://asciinema.org/a/VHEK66OjUPUm0Vt5Jh571jgfN)
