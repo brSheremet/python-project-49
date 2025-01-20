@@ -22,7 +22,7 @@ def play_game():
             print("Correct!")
             correct_answers += 1
         else:
-            print(f"'{answer}' is wrong answer ;(. Correct answer was '{correct_answer}'.") # noqa: E501
+            print(f"'{answer}' is wrong answer ;(. Correct answer was '{correct_answer}'.")  # noqa: E501
             print(f"Let's try again, {name}!")
             return
     print(f"Congratulations, {name}!")
