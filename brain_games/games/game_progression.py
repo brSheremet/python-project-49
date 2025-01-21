@@ -25,7 +25,7 @@ def ask_progression():
     rounds = 3  # Количество раундов
     for _ in range(rounds):
         progression, missing_value = generate_progression()
-        progression_str = ' '.join(map(str, progression))  # Преобразование в строку
+        progression_str = ' '.join(map(str, progression))
         print(f"Question: {progression_str}")
         
         user_answer = int(input("Your answer: "))
