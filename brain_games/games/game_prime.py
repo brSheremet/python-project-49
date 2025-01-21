@@ -11,7 +11,7 @@ def is_prime(num):
         return False
     i = 5
     while i * i <= num:
-        if num % i == 0 or num % (i + 2) == 0:  # Делится без остатка - не простые
+        if num % i == 0 or num % (i + 2) == 0:  # Делится без остатка
             return False
         i += 6
     return True
@@ -21,7 +21,7 @@ def play_is_prime():
     print("Welcome to the Brain Games!")
     name = input("May I have your name? ")
     print(f"Hello, {name}!")
-    print(f'Answer "yes" if given number is prime. Otherwise answer "no".')
+    print('Answer "yes" if given number is prime. Otherwise answer "no".')
 
     for _ in range(3):
         num = random.randint(1, 100)
