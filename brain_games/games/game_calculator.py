@@ -6,9 +6,9 @@ def get_question_and_answer():
     num1 = random.randint(1, 100)
     num2 = random.randint(1, 100)
 
-    operation = random.choice(['+', '-', '*'])  # Генерация случайной операции
+    operation = random.choice(['+', '-', '*'])  # Генерация случайной операции!
 
-    question = f"{num1} {operation} {num2}"  # Генерация вопроса
+    question = f"{num1} {operation} {num2}"  # Генерация вопроса!
 
     correct_answer = eval(question)
 
