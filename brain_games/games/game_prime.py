@@ -1,5 +1,9 @@
 import random
-from brain_games.cli import welcome_user
+
+RULES = 'Answer "yes" if given number is prime. Otherwise answer "no".'
+
+MIN_NUMBERS = 1
+MAX_NUMBERS = 100
 
 
 def is_prime(num):
@@ -17,25 +21,8 @@ def is_prime(num):
     return True
 
 
-def play_is_prime():
-    print("Welcome to the Brain Games!")
-    name = input("May I have your name? ")
-    print(f"Hello, {name}!")
-    print('Answer "yes" if given number is prime. Otherwise answer "no".')
-
-    for _ in range(3):
-        num = random.randint(1, 100)
-        print(f"Question: {num}")
-        user_answer = input("Your answer: ").strip().lower()
-        
-        correct_answer = "yes" if is_prime(num) else "no"
-
-        if user_answer == correct_answer:
-            print("Correct!")
-        else:
-            print(f"'{user_answer}' is wrong answer ;(. "
-                  + f"Correct answer was '{correct_answer}'.")
-            print(f"Let's try again, {name}!")
-            return
-
-    print(f"Congratulations, {name}!")
+def prime_game():
+    num = random.randint(MIN_NUMBERS, MAX_NUMBERS)
+    question = str(num)
+    correct_answer = 'yes' if is_prime(num) else 'no'
+    return question, correct_answer
