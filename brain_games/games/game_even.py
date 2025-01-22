@@ -1,28 +1,9 @@
 import random
-from brain_games.cli import welcome_user
+
+RULES = 'Answer "yes" if the number is even, otherwise answer "no".'
 
 
-def is_even(number):
-    return number % 2 == 0
-
-
-def play_game():
-    name = welcome_user()
-    print("Answer \"yes\" if the number is even, otherwise answer \"no\".")
-
-    correct_answers = 0
-    while correct_answers < 3:
-        number = random.randint(1, 100)
-        print(f"Question: {number}")
-        answer = input("Your answer: ").strip().lower()
-
-        correct_answer = "yes" if is_even(number) else "no"
-
-        if answer == correct_answer:
-            print("Correct!")
-            correct_answers += 1
-        else:
-            print(f"'{answer}' is wrong answer ;(. Correct answer was '{correct_answer}'.")  # noqa: E501
-            print(f"Let's try again, {name}!")
-            return
-    print(f"Congratulations, {name}!")
+def get_question_and_answer():
+    number = random.randint(1, 100)
+    correct_answer = "yes" if number % 2 == 0 else "no"
+    return str(number), correct_answer
