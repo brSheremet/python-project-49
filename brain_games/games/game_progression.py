@@ -5,7 +5,7 @@ RULES = 'What number is missing in the progression?'
 MIN_NUMBERS = 1
 MAX_NUMBERS = 10
 MIN_LENGTH = 5
-MAX_LENGTH  = 10
+MAX_LENGTH = 10
 MIN_STEP = 1
 MAX_STEP = 5
 
