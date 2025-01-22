@@ -1,40 +1,26 @@
 import random
-from brain_games.cli import welcome_user
+
+RULES = 'What number is missing in the progression?'
+
+MIN_NUMBERS = 1
+MAX_NUMBERS = 10
+MIN_LENGTH = 5
+MAX_LENGTH  = 10
+MIN_STEP = 1
+MAX_STEP = 5
 
 
-def generate_progression():
-    start = random.randint(1, 100)  # Начало прогрессии
-    step = random.randint(1, 10)    # Шаг
-    length = 10                      # Длина прогрессии согласно заданию
+def progression_game():
+    start = random.randint(MIN_NUMBERS, MAX_NUMBERS)
+    step = random.randint(MIN_STEP, MAX_STEP)
+    length = random.randint(MIN_LENGTH, MAX_LENGTH)
     progression = [start + step * i for i in range(length)]
 
-    missing_index = random.randint(0, length - 1)  # Случайный индекс
-    missing_value = progression[missing_index]      # Пропущенное значение
+    missing_index = random.randint(0, length - 1)
+    missing_value = progression[missing_index]
 
-    progression[missing_index] = '..'  # Замена числа на двоеточие
+    progression[missing_index] = '..'
 
-    return progression, missing_value
+    question = ' '.join(map(str, progression))
 
-
-def ask_progression():
-    print("Welcome to the Brain Games!")
-    name = input("May I have your name? ")
-    print(f"Hello, {name}!")
-    print("What number is missing in the progression?")
-
-    rounds = 3  # Количество раундов
-    for _ in range(rounds):
-        progression, missing_value = generate_progression()
-        progression_str = ' '.join(map(str, progression))
-        print(f"Question: {progression_str}")
-        
-        user_answer = int(input("Your answer: "))
-        if user_answer == missing_value:
-            print("Correct!")
-        else:
-            print(f"'{user_answer}' is wrong answer ;(. "
-                  f"Correct answer was '{missing_value}'.")
-            print(f"Let's try again, {name}!")
-            return
-
-    print(f"Congratulations, {name}!")
+    return question, str(missing_value)
